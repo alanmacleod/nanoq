@@ -18,6 +18,7 @@ export default class nanoq
 
   pop()
   {
+    if (this.p == 1) return null;
     let r = this.data[1];
     this.data[1] = this.data[(this.p--) - 1];
     this.sink(1);
@@ -29,7 +30,7 @@ export default class nanoq
     let a, b, c;
     while(i << 1 < this.p)
     {
-      a = i << 1; b = a++;
+      a = i << 1; b = a+1;
       c = (b > this.p) ? a : this.c(b, a) ? a : b;
 
       if (this.c(i, c))
