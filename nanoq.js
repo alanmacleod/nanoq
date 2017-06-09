@@ -3,38 +3,37 @@ export default class nanoq
 {
   constructor(max, compare)
   {
-    this.data = max < 65537 ? (max < 257 ? new Uint8Array(max) :
-                new Uint16Array(max)) : new Uint32Array(max);
-    this.c = compare || ((a, b) => this.data[a] > this.data[b]);
-    this.peek = () => { return this.data[1]; }
+    this.tree = !max ? [] : (max < 65536 ? (max < 256 ? new Uint8Array(max) :
+                new Uint16Array(max)) : new Uint32Array(max));
+    this.cmp = compare || ((a, b) => this.tree[a] > this.tree[b]);
+    this.peek = () => { return this.tree[1]; }
   }
 
-  push(i)
+  push(n)
   {
-    if (this.p) this.data[this.p++] = i;      // append
-    else this.data[(this.p = 2) - 1] = i;     // init
+    if (this.p) this.tree[this.p++] = n;
+    else this.tree[(this.p = 2) - 1] = n;
     this.swim();
   }
 
   pop()
   {
-    if (this.p == 1) return null;
-    let r = this.data[1];
-    this.data[1] = this.data[(this.p--) - 1];
+    if (this.p == 1 || !this.p) return null;
+    let r = this.tree[1];
+    this.tree[1] = this.tree[(this.p--) - 1];
     this.sink(1);
     return r;
   }
 
   sink(i)
   {
-    let a, b, c;
-    while(i << 1 < this.p)
+    let j, k, c;
+    while((j = i<<1) < this.p)
     {
-      a = i << 1; b = a+1;
-      c = (b > this.p) ? a : this.c(b, a) ? a : b;
-
-      if (this.c(i, c))
-        [this.data[i], this.data[c]] = [this.data[c], this.data[i]];
+      k = j + 1;
+      c = (k > this.p) ? j : this.cmp(k, j) ? j : k;
+      if (this.cmp(i, c))
+        [this.tree[i], this.tree[c]] = [this.tree[c], this.tree[i]];
       else return;
       i = c;
     }
@@ -43,9 +42,9 @@ export default class nanoq
   swim()
   {
     let p = this.p - 1, q = p >> 1;
-    while (p && this.c(q, p))
+    while (q && this.cmp(q, p))
     {
-      [this.data[q], this.data[p]] = [this.data[p], this.data[q]];
+      [this.tree[q], this.tree[p]] = [this.tree[p], this.tree[q]];
       q = (p >>= 1) >> 1;
     }
   }
