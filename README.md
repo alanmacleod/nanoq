@@ -1,7 +1,7 @@
 
 # nanoq
 
-Itsy bitsy teeny weeny priority queue implemented as a binary heap.
+Itsy bitsy teeny weeny priority queue implemented as a blazing fast binary heap.
 
 Supports arbitrary data or, by passing a maximum tree size, will select the best fit typed array for compact memory usage and performance via indices (...won't somebody think of the mobiles T_T)
 

@@ -75,7 +75,7 @@ test('Sorted maxheap comparator', t => {
 	t.pass();
 });
 
-test('Test pop() underflow', t => {
+test('`pop()` underflow', t => {
 	let q = new nanoq();
 	q.push(1);
 	q.push(2);
@@ -86,4 +86,13 @@ test('Test pop() underflow', t => {
 	q.pop();
 
 	t.is(q.pop(), null);
+});
+
+test('peek', t => {
+	let q = new nanoq();
+	q.push(100);
+	q.push(101);
+	q.push(1);
+
+	t.is(q.peek(), 1);
 });
