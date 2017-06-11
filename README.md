@@ -25,7 +25,7 @@ Install via npm:
 $ npm install nanoq
 ```
 
-```
+```js
 var nanoq = require('nanoq');
 
 // nanoq is a "minheap" by default
