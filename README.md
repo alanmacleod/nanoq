@@ -11,6 +11,8 @@ Extracted and tuned from a progressive level-of-detail geometry simplification p
 
 ## Benchmarks
 
+ran under Node v6.9.1
+
 package | num items | time (seconds)
 --- | --- | ---
 **nanoq (v0.0.2)** | 10,000,000 | 1.855
