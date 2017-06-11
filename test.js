@@ -1,9 +1,9 @@
 import test from 'ava';
 var nanoq = require('./nanoq');
 
-var data=[], w=100;
+var data=[], w=10000;
 
-while(--w) data.push((100 * Math.random())>>0);
+while(--w) data.push((1000 * Math.random())>>0);
 
 test('Typed Array 8bit', t => {
 	let q = new nanoq(255);
@@ -64,7 +64,7 @@ test('Sorted maxheap comparator', t => {
 
 	for (let i=0; i<data.length; i++) q.push(data[i]);
 
-	var last = 101;
+	var last = Number.MAX_VALUE;
 	for (let i=0; i<data.length; i++)
 	{
 		let p = q.pop();
@@ -109,4 +109,16 @@ test('peek', t => {
 	q.push(1);
 
 	t.is(q.peek(), 1);
+});
+
+
+test('length', t => {
+	let q = new nanoq();
+	let num = 500 + ((Math.random() * 500)>>0);
+
+	for (let i=0; i<num; i++)
+		q.push((Math.random()* 1000)>>0);
+
+	t.is(q.length(), num);
+
 });

@@ -7,6 +7,7 @@ var data = [];
 // Load consistent test data
 // data = JSON.parse(require('fs').readFileSync("./random.json", "utf8"));
 
+
 for (var t=0; t<N; t++)
   data.push((Math.random() * 1000)>>0);
 

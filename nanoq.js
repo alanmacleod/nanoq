@@ -1,10 +1,10 @@
 module.exports = nanoq;
 
 function nanoq(max, compare) {
-  this.tree = !max ? [0] : (max < 65536 ? (max < 256 ? new Uint8Array(max):
-                            new Uint16Array(max))    : new Uint32Array(max));
+  this.tree = !max ? [0] : (max < 65536 ? (max < 256 ? new Uint8Array(max): new Uint16Array(max)) : new Uint32Array(max));
   this.p = Number(!!(this.cmp = compare || ((a, b) => a > b)));  // lol?
   this.peek = function () { return this.tree[1]; };
+  this.length = function() { return this.p-1; };
 }
 nanoq.prototype = {
     push: function(n) {
