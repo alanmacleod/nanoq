@@ -13,7 +13,7 @@ for (var t=0; t<N; t++)
 var nq = new nanoq(0, compare);
 
 function compare(a, b) {
-    return a - b;
+    return a > b;
 }
 
 console.time('nanoq ['+N+' items]');

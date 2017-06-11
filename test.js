@@ -43,7 +43,7 @@ test('Sorted default comparator', t => {
 });
 
 test('Sorted minheap comparator', t => {
-	let q = new nanoq(0, (a, b) => a - b);
+	let q = new nanoq(0, (a, b) => a > b);
 
 	for (let i=0; i<data.length; i++) q.push(data[i]);
 
@@ -60,7 +60,7 @@ test('Sorted minheap comparator', t => {
 
 
 test('Sorted maxheap comparator', t => {
-	let q = new nanoq(0, (a, b) => b - a);
+	let q = new nanoq(0, (a, b) => a < b);
 
 	for (let i=0; i<data.length; i++) q.push(data[i]);
 
@@ -74,6 +74,20 @@ test('Sorted maxheap comparator', t => {
 
 	t.pass();
 });
+
+test('Sorted strings', t => {
+	let q = new nanoq();
+	q.push("dog");
+	q.push("cat");
+	q.push("more cats");
+	q.push("yet more cats");
+	t.is(q.pop(), "cat");
+	t.is(q.pop(), "dog");
+	t.is(q.pop(), "more cats");
+	t.is(q.pop(), "yet more cats");
+	t.pass();
+});
+
 
 test('`pop()` underflow', t => {
 	let q = new nanoq();
