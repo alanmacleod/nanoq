@@ -17,7 +17,14 @@ package | num items | time (seconds)
 [tinyQueue](https://github.com/mourner/tinyqueue) | 10,000,000 | 2.714
 [FastPriorityQueue](https://github.com/lemire/FastPriorityQueue.js) | 10,000,000 | 12.008
 
-## Usage 
+## Usage
+
+Install via npm:
+
+```
+$ npm install nanoq
+```
+
 ```
 var nanoq = require('nanoq');
 
@@ -72,10 +79,4 @@ for (var s of stuff)
   q.push(s);
 
 console.log(q.pop(), q.pop(), q.pop()); // returns {val:1}, {val:2}, {val:3}
-```
-
-Install via npm:
-
-```
-$ npm install nanoq
 ```
