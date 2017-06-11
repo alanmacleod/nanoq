@@ -5,7 +5,9 @@
   "main": "nanoq.js",
   "dependencies": {},
   "devDependencies": {
-    "ava": "^0.19.1"
+    "ava": "^0.19.1",
+    "fastpriorityqueue": "^0.2.4",
+    "tinyqueue": "^1.2.2"
   },
   "scripts": {
     "test": "ava"
