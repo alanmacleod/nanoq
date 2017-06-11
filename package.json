@@ -1,0 +1,30 @@
+{
+  "name": "nanoq",
+  "version": "0.0.2",
+  "description": "Itsy bitsy teeny weeny priority queue",
+  "main": "nanoq.js",
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "^0.19.1"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanmacleod/nanoq.git"
+  },
+  "keywords": [
+    "minheap",
+    "maxheap",
+    "binary-heap",
+    "priority-queue",
+    "heap"
+  ],
+  "author": "Alan MacLeod <alan@alanmacleod.eu> (http://alanmacleod.eu)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alanmacleod/nanoq/issues"
+  },
+  "homepage": "https://github.com/alanmacleod/nanoq#readme"
+}
