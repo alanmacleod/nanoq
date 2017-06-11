@@ -17,6 +17,7 @@ package | num items | time (seconds)
 [tinyQueue](https://github.com/mourner/tinyqueue) | 10,000,000 | 2.714
 [FastPriorityQueue](https://github.com/lemire/FastPriorityQueue.js) | 10,000,000 | 12.008
 
+## Usage 
 ```
 var nanoq = require('nanoq');
 
