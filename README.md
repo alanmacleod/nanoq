@@ -14,8 +14,8 @@ Extracted and tuned from a progressive level-of-detail geometry simplification p
 package | num items | time (seconds)
 --- | --- | ---
 **nanoq (v0.0.2)** | 10,000,000 | 1.855
-[tinyQueue](https://github.com/mourner/tinyqueue) | 10,000,000 | 2.714
-[FastPriorityQueue](https://github.com/lemire/FastPriorityQueue.js) | 10,000,000 | 12.008
+[tinyQueue (v1.2.2)](https://github.com/mourner/tinyqueue) | 10,000,000 | 2.714
+[FastPriorityQueue (0.2.4)](https://github.com/lemire/FastPriorityQueue.js) | 10,000,000 | 12.008
 
 ## Usage
 
