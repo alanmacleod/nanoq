@@ -4,18 +4,20 @@ module.exports = function nanoq(max, compare) {
   this.peek = function() {return this.tree[1];};
   this.length = function() {return this.p-1;};
   this.push = function(n) {
-      let q = this.p++, p, v, t = this.tree, c = this.cmp;
+      let q=this.p++, p, v, t = this.tree, c = this.cmp;
+      // for (;(p = q >> 1) > 0; q=p) {
       while((p = q >> 1) > 0) {
         v = t[p];
         if (c(n, v)) break;
-        t[q] = v; q = p;
+        t[q] = v; q=p;
       }
       t[q] = n;
   };
   this.pop = function() {
     if (this.p==1) return null;
-    let t = this.tree, c = this.cmp, p=--this.p, r=t[1], b=t[p], n=1, j, v;
+    let t = this.tree, c = this.cmp, p=--this.p, r=t[1], b=t[p], n=1, j, v; //p=--this.p
     while((j = n << 1) < p) {
+    // for (;(j = n << 1) < p; n=j){
       if (j+1 <= p) if (c(t[j],t[j+1])) j++; v = t[j];
       if (c(v, b)) break;
       t[n] = v; n = j;

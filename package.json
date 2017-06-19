@@ -17,6 +17,9 @@
     "url": "git+https://github.com/alanmacleod/nanoq.git"
   },
   "keywords": [
+    "min-heap",
+    "max-heap",
+    "binaryheap",
     "minheap",
     "maxheap",
     "binary-heap",
