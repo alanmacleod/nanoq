@@ -1,5 +1,7 @@
 
 [![Build Status](https://travis-ci.org/alanmacleod/nanoq.svg?branch=master)](https://travis-ci.org/alanmacleod/nanoq)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 # nanoq
 
