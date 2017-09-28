@@ -5,6 +5,8 @@
 
 # nanoq
 
+The world's fastest Javascript priority queue? Maybe?
+
 Itsy bitsy teeny weeny priority queue implemented as a blazing fast binary heap in fewer than 30 lines of code (sort of .. ok there's a couple of lines with two statements).
 
 Supports arbitrary objects including strings or, by passing a maximum tree size, will select the best `TypedArray` for guaranteed compact memory usage (...won't somebody think of the mobiles T_T)
